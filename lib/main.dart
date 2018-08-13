@@ -39,11 +39,9 @@ class HomePage extends StatefulWidget {
   ];
 
   @override
-  HomePageState createState() => new HomePageState();
-
-  // State<StatefulWidget> createState() {
-  //   return new HomePageState();
-  // }
+  State<StatefulWidget> createState() {
+    return new HomePageState();
+  }
 }
 
 class CoreApp extends StatelessWidget {
@@ -55,37 +53,11 @@ class CoreApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // damien think about replacing home: with a sign in page that then Navigates off
-      home: new SignIn(),
-      routes: <String, WidgetBuilder>{
-          "/homepage" : (BuildContext context) => new HomePage(),
-          "/startup" : (BuildContext context) => new StartupPage(),
-          "/usa2018" : (BuildContext context) => new USA2018Page(),
-          "/packing" : (BuildContext context) => new PackingListPage(),
-          "/telstra" : (BuildContext context) => new TelstraVMailPage(),
-          "/pomodoro" : (BuildContext context) => new PomodoroPage(),
-          "/tipcalc" : (BuildContext context) => new TipCalculatorPage(),
-          //add more routes here
-        },
-
-      //home: new HomePage(),
-    );
-  }
-}
-
-class SignIn extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-  return new Scaffold(
-    appBar: new AppBar(
-      title: new Text("Sign In"),
-    ),
-    body: new IconButton(
-      icon: new Icon(Icons.arrow_forward),
-      onPressed: (){
-        Navigator.of(context).pushNamed("/homepage");
-        }
-      ),
+      home: new HomePage(),
+      // routes: <String, WidgetBuilder> {
+      //   '/screen1': (BuildContext context) => new Screen1(),
+      //   '/screen2' : (BuildContext context) => new Screen2()
+      // },
     );
   }
 }
@@ -95,32 +67,23 @@ class HomePageState extends State<HomePage> {
   //set this to -1 and have an initial blank page
 
   _getDrawerItemWidget(int pos) {
-    if (pos==0) {
-      Navigator.of(context).pushNamed("/startpage");
-    }
-    if (pos == 1) {
-      Navigator.of(context).pushNamed("/usa2018");
-    }
-    if (pos == 3) {
-      Navigator.of(context).pushNamed("/packing");
-    }
-    // switch (pos) {
-    //   case 0:
-    //     return new StartupPage();     
-    //   case 1:
-    //     return new USA2018Page();
-    //   case 3:
-    //     return new PackingListPage();
-    //   case 4:
-    //     return new TelstraVMailPage();
-    //   case 5:
-    //     return new PomodoroPage();
-    //   case 6:
-    //     return new TipCalculatorPage();
+    switch (pos) {
+      case 0:
+        return new StartupPage();     
+      case 1:
+        return new USA2018Page();
+      case 3:
+        return new PackingListPage();
+      case 4:
+        return new TelstraVMailPage();
+    case 5:
+        return new PomodoroPage();
+    case 6:
+        return new TipCalculatorPage();
 
-    //   default:
-    //     return new Text("Error");
-    // }
+      default:
+        return new Text("Error");
+    }
   }
   
   _onSelectItem(int index) {
@@ -141,27 +104,6 @@ class HomePageState extends State<HomePage> {
             title: new Text(d.title),
             enabled: d.enabled,
             selected: i == _selectedDrawerIndex,
-            // onTap: () { Navigator.of(context).pop(); Navigator.of(context).pushNamed("/packing"); }
-            // onTap: () {
-            //   switch (i) {
-            //     case 0:
-            //       Navigator.of(context).pushNamed("/startpage");     
-            //     case 1:
-            //       Navigator.of(context).pushNamed("/usa2018");
-            //     case 3:
-            //       Navigator.of(context).pushNamed("/packing");
-            //     case 4:
-            //       Navigator.of(context).pushNamed("/telstra");
-            //     case 5:
-            //       Navigator.of(context).pushNamed("/pomodoro");
-            //     case 6:
-            //       Navigator.of(context).pushNamed("/tipcalc");
-            //     default:
-            //       return new Text("Error");
-            //   }
-            //   Navigator.of(context).pop();
-            // }
-            
             onTap: () => _onSelectItem(i),
             )
           );
@@ -203,5 +145,18 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+// class ActivityCards extends StatefulWidget {
+//   @override
+//   createState() => new ActivityCard();
+// }
+
+// class ActivityCard extends State<ActivityCards> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return new Text('Hello Damien\nis this the start');
+//   }
+// }
 
 

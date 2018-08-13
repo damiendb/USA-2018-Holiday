@@ -225,20 +225,20 @@ class PackingSubCategories {
     this.bag,
     this.hint,
     this.collective,
-    this.builder,
+    //this.builder,
     //this.valueToString,
  // }) : textController = new TextEditingController(text: valueToString(value));
   });
 
   int categoryID;
   String packingSubCategory;
-  String value;
+  int value;
   String bag;
   String hint;
   String collective;
   //final TextEditingController textController;
   //PackItemBodyBuilder<T> builder;
-  PackItemBodyBuilder builder;
+  //PackItemBodyBuilder builder;
   //final ValueToString<T> valueToString;
  
   bool isExpanded = false;
@@ -255,22 +255,22 @@ class PackingSubCategories {
   //     };
   //   }
   
-  Widget build() => builder(this);
+  //Widget build() => builder(this);
 
 }
 
 final List<PackingSubCategories> allpackingItems = <PackingSubCategories>[
 
-  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shirts', value: "0", bag: "Suitcase", collective: "shirt", hint: "Taking 0"),
-  PackingSubCategories(categoryID: 0, packingSubCategory: 'Pants', value: "0", bag: "Suitcase", collective: "pair", hint: "Taking 0"),
-  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shorts', value: "0", bag: "Suitcase", collective: "pair", hint: "Taking 0"),
-  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shoes', value: "0", bag: "Suitcase", collective: "pair", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shirts', value: 0, bag: "Suitcase", collective: "shirt", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 0, packingSubCategory: 'Pants', value: 0, bag: "Suitcase", collective: "pair", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shorts', value: 0, bag: "Suitcase", collective: "pair", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 0, packingSubCategory: 'Shoes', value: 0, bag: "Suitcase", collective: "pair", hint: "Taking 0"),
 
-  PackingSubCategories(categoryID: 1, packingSubCategory: 'Laptop', value: "0", bag: "Carry On", collective: "laptop", hint: "Taking 0"),
-  PackingSubCategories(categoryID: 1, packingSubCategory: 'Chargers', value: "0", bag: "Carry On", collective: "laptop charger", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 1, packingSubCategory: 'Laptop', value: 0, bag: "Carry On", collective: "laptop", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 1, packingSubCategory: 'Chargers', value: 0, bag: "Carry On", collective: "laptop charger", hint: "Taking 0"),
 
-  PackingSubCategories(categoryID: 2, packingSubCategory: 'Toothbrush', value: "0", bag: "Suitcase", collective: "toothbrush", hint: "Taking 0"),
-  PackingSubCategories(categoryID: 2, packingSubCategory: 'Tooth Paste', value: "0", bag: "Suitcase", collective: "tube", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 2, packingSubCategory: 'Toothbrush', value: 0, bag: "Suitcase", collective: "toothbrush", hint: "Taking 0"),
+  PackingSubCategories(categoryID: 2, packingSubCategory: 'Tooth Paste', value: 0, bag: "Suitcase", collective: "tube", hint: "Taking 0"),
 
 ];
 

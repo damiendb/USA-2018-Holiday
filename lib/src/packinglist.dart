@@ -35,7 +35,6 @@ class _MyPanelState extends State<PackingListPanels>
   final ShapeBorder shape;
 
   var _packItems = new List<PackingSubCategories>();
-  var _packItemsa = new List<PackingSubCategories>();
 
   @override
   void initState() {
@@ -47,43 +46,37 @@ class _MyPanelState extends State<PackingListPanels>
     for (var i = 0; i < numSubCats; i++) {
       if (allpackingItems[i].categoryID == catID) {
 
-
-        // _packItemsa = new <PackingSubCategories>(
-        //   categoryID: 0,
-
-        // )
         _packItems.add(allpackingItems[i]);
 
-        _packItems[numItems].builder =  (PackingSubCategories item) {
-          void close() {
-            setState(() {
-              item.isExpanded = false;
-            });
-          }
-          return new Form (
-            child: new Builder(
-              builder: (BuildContext context) {
-                return new CollapsibleBody(
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0),
-                  onSave: () { Form.of(context).save(); close(); },
-                  onCancel: () { Form.of(context).reset(); close(); },
-                  child: new Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    //child: new Text('This is where the Text Field wwould go'),
-                    child: new TextFormField(
-                      //controller: item.textController,
-                      decoration: new InputDecoration(
-                        hintText: item.hint,
-                        labelText: item.packingSubCategory,
-                      ),
-                      onSaved: (String value) { item.value = value; },
-                    ),
-                  ),
-                );
-              },
-            ),
-          ); 
-        };
+        // _packItems[numItems].builder =  (PackingSubCategories item) {
+        //   void close() {
+        //     setState(() {
+        //       item.isExpanded = false;
+        //     });
+        //   }
+        //   return new Form (
+        //     child: new Builder(
+        //       builder: (BuildContext context) {
+        //         return new CollapsibleBody(
+        //           margin: const EdgeInsets.symmetric(horizontal: 16.0),
+        //           onSave: () { Form.of(context).save(); close(); },
+        //           onCancel: () { Form.of(context).reset(); close(); },
+        //           child: new Padding(
+        //             padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        //             child: new TextFormField(
+        //               controller: item.textController,
+        //               decoration: new InputDecoration(
+        //                 hintText: item.hint,
+        //                 labelText: item.packingSubCategory,
+        //               ),
+        //               onSaved: (String value) { item.value = value; },
+        //             ),
+        //           ),
+        //         );
+        //       },
+        //     ),
+        //   ); 
+        //};
 
         numItems++;
       }
@@ -128,8 +121,8 @@ class _MyPanelState extends State<PackingListPanels>
                 //So I think the headerbuilder above works.
                 //Now just sort out the body build part.
                 //Maybe test first with a simple debug text statement in the body
-                //body: new Text ('Damien debug statement in the Expansion Panel body')
-                body: item.build()
+                body: new Text ('Damien debug statement in the Expansion Panel body')
+                // body: item.build()
 
               );
             }).toList()
