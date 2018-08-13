@@ -32,6 +32,7 @@ class HomePage extends StatefulWidget {
     new DrawerItem("Resources", null, true),
     new DrawerItem("Divider", null, false),
     new DrawerItem("Contacts", null, true),
+    new DrawerItem("Divider", null, false),
     new DrawerItem("Clients", null, true),
     new DrawerItem("Divider", null, false),
     new DrawerItem("Settings", null, true),
